@@ -48,3 +48,32 @@ Note that $\vec{i}$ is inclined upward since the pilot is still climing while re
 
 Let's calculate the horizontal distance covered until the pilot reaches the point of intersection $I$ with the optimal trajectory.
 
+# Calculus
+
+We set a wind speed, a thermal's vertical speed and a pilot's vertical speed (thermal climb rate - pilot sink rate).  
+Thus $\vec{Dv}, \vec{Vzp}, \vec{Vzt}, T$ and $P = (P_x, P_y)$ are known.  
+Let's determine the equation of the straight lines $(IP)$ and $(OT)$ prior to find the coordinates of $I$ the point at which they intersect.  
+
+$(IP) : y = a_1 \times x + b_1$  
+where  
+
+$$
+\begin{align*}
+    a_1 &= ||\vec{Vzp}|| \div \text{pilot's upwind speed} \\
+        &= ||\vec{Vzp}|| \div (\text{wing speed} - ||\vec{Dv}||) \\
+\end{align*}
+$$
+
+and  
+
+$$
+    b_1 = P_y - a_1 \times P_x
+$$
+
+
+$(OT) : y = a_2 \times x$  
+where
+
+$$
+    a_2 = ||\vec{Vzt}|| \div ||\vec{Dv}||
+$$
