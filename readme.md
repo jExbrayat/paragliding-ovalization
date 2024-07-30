@@ -30,3 +30,19 @@ $||\vec{Vzp}|| =$ *(thermal climb rate - pilot sink rate) * time for one turn*
 $I$: point of intersection between the pilot's ovalization trajectory $(IP)$ and the optimal placement in the thermal  
 
 $\vec{i}$: vector of the pilot's ovalization movement  
+
+# Problem
+
+Ovalization in thermalling is the action of circling a little bit upwind each turn in order to recenter the thermal when encountering wind drift.  
+
+What distance have we to recover each turn to reach back the center of the thermal ? What are the parameters that affect the need of ovalization ?  
+
+## The problem is formalized as following:
+
+We consider a pilot and a thermic air particle starting from the same point $O$ at time $t_0$.  
+
+After the pilot made one turn, at $t_1$, the pilot's position $P$ is under the thermic particle's position $T$ since they are subject to the same wind drift but different vertical speeds.  
+
+The pilot, aware of the need of ovalization, stops circling and goes upwind in a straight line in order to reach back the strongest part of the thermal $I$ at $t_2$. The vector describing this movement is $\vec{i}$.  
+Note that $\vec{i}$ is inclined upward since the pilot is still climing while reaching back the strongest part of the thermal. For simplicity purpose, we suppose the climbing rate to be constant.  
+
