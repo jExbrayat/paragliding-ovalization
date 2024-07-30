@@ -95,7 +95,7 @@ $$
         }
 $$
 
-Finally, we can evaluate the equation of $(OT)$ at $x^*$ in order to calculate the y-coordinate of $I$:
+We can evaluate the equation of $(OT)$ at $x^*$ in order to calculate the y-coordinate of $I$:
 
 $$
 \begin{align*}
@@ -107,4 +107,12 @@ $$
         } 
 
 \end{align*}
+$$
+
+Now we know the coordinates of the vector $\vec{i} = (i_x, i_y) = (x^* - P_x, y^* - P_y)$.  
+
+Given $i_x$, the horizontal component of $\vec{i}$, and the wing speed, we can estimate the time needed for the pilot to reach back the optimal trajectory with a straight line towards upwind:  
+
+$$
+    t_2 - t_1 = \frac{i_x}{\text{wing upwind speed}}
 $$
