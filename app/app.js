@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         var layout = {
-            title: 'Line and Scatter Plot',
+            title: 'Needed time ovalizing in a straight line - for modelling simplicity - upwind each turn',
             yaxis: { range: [0, 20] },
         };
 
