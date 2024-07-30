@@ -18,9 +18,7 @@ class SetOfConditions {
         let b_1 = this.pilot_vz - a_1 * this.wind_vx
         let a_2 = this.thermal_vz / this.wind_vx
         let x_star = b_1 / (a_2 - a_1)
-        let y_star = a_2 * x_star
         let i_x = x_star - this.wind_vx
-        let i_y = y_star - this.pilot_vz
         let time_to_objective = i_x / this.pilot_upwind_vx
         return time_to_objective
     }
