@@ -26,15 +26,21 @@ class SetOfConditions {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    function compute_solution(wind_vx, thermal_vz, time_for_one_turn = 20) {
-        instance = new SetOfConditions(wind_vx = wind_vx, thermal_vz = thermal_vz, wing_vz = -1.5, wing_vx = 10)
+    function compute_solution(wind_vx, thermal_vz, time_for_one_turn, wing_vz, wing_vx) {
+        instance = new SetOfConditions(wind_vx = wind_vx, thermal_vz = thermal_vz, wing_vz = wing_vz, wing_vx = wing_vx)
         solution = instance.solver() * time_for_one_turn
         // Give solution for one turn time reference (it was computed for a unitary timestep i.e. one second)
         return solution
     }
 
-    function updatePlot(wind_vx) {
-        let y_values = x_axis.map(thermal_vz => compute_solution(wind_vx, thermal_vz));
+    function updatePlot(wind_vx, time_for_one_turn, wing_vz, wing_vx) {
+        let y_values = x_axis.map(thermal_vz => compute_solution(
+            wind_vx = wind_vx,
+            thermal_vz = thermal_vz,
+            time_for_one_turn = time_for_one_turn,
+            wing_vz = wing_vz,
+            wing_vx = wing_vx
+        ));
 
         var plotly_trace = {
             x: x_axis,
@@ -53,13 +59,62 @@ document.addEventListener('DOMContentLoaded', function () {
     // Make initial plot
     let x_axis = nj.arange(1.5, 10, 0.5) // Mapping the x-axis of the thermal vz
     x_axis = x_axis.tolist() // Do not use numpy js anymore
-    let selectedWindVx = parseFloat(document.getElementById('windSlider').value);
-    updatePlot(selectedWindVx);
+
+    let sliderObject = document.getElementById("windSlider")
+    let inputObject1 = document.getElementById("input1")
+    let inputObject2 = document.getElementById("input2")
+    let inputObject3 = document.getElementById("input3")
+
+    let selectedWindVx = parseFloat(sliderObject.value);
+    let selectedWingVx = parseFloat(inputObject1.value);
+    let selectedWingVz = - parseFloat(inputObject2.value); // Take the opposite since the app asks for a sink rate
+    let selectedTimeForOneTurn = parseFloat(inputObject3.value);
+
+    updatePlot(
+        wind_vx = selectedWindVx,
+        time_for_one_turn = selectedTimeForOneTurn,
+        wing_vz = selectedWingVz,
+        wing_vx = selectedWingVx
+    );
 
     // Update plot with user's interaction
-    let sliderObject = document.getElementById("windSlider")
     sliderObject.addEventListener('input', (event) => {
-        selectedWindVx = sliderObject.value
-        updatePlot(selectedWindVx)
+        selectedWindVx = sliderObject.value // Update value
+        updatePlot( // Compute again and plot
+            wind_vx = selectedWindVx,
+            time_for_one_turn = selectedTimeForOneTurn,
+            wing_vz = selectedWingVz,
+            wing_vx = selectedWingVx
+        );
+    })
+
+    inputObject1.addEventListener('input', (event) => {
+        selectedWingVx = inputObject1.value // Update value
+        updatePlot( // Compute again and plot
+            wind_vx = selectedWindVx,
+            time_for_one_turn = selectedTimeForOneTurn,
+            wing_vz = selectedWingVz,
+            wing_vx = selectedWingVx
+        );
+    })
+
+    inputObject2.addEventListener('input', (event) => {
+        selectedWingVz = inputObject2.value // Update value
+        updatePlot( // Compute again and plot
+            wind_vx = selectedWindVx,
+            time_for_one_turn = selectedTimeForOneTurn,
+            wing_vz = selectedWingVz,
+            wing_vx = selectedWingVx
+        );
+    })
+
+    inputObject3.addEventListener('input', (event) => {
+        selectedTimeForOneTurn = inputObject3.value // Update value
+        updatePlot( // Compute again and plot
+            wind_vx = selectedWindVx,
+            time_for_one_turn = selectedTimeForOneTurn,
+            wing_vz = selectedWingVz,
+            wing_vx = selectedWingVx
+        );
     })
 })
