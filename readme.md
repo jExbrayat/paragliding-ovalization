@@ -59,12 +59,12 @@ where
 
 $$
 \begin{align*}
-    a_1 &= ||\vec{Vzp}|| \div \text{pilot's upwind speed} \\
-        &= ||\vec{Vzp}|| \div (\text{wing speed} - ||\vec{Dv}||) \\
+    a_1 &= ||\vec{Vzp}|| \div ||\vec{i_x}|| \\
+        &= \text{pilot's vertical speed} \div \text{pilot's upwind speed} \\
 \end{align*}
 $$
 
-and  
+and
 
 $$
     b_1 = P_y - a_1 \times P_x
@@ -76,4 +76,35 @@ where
 
 $$
     a_2 = ||\vec{Vzt}|| \div ||\vec{Dv}||
+$$
+
+Let's calculate the x-coordinate of $I$ the point of intersection of $(OT)$ and $(IP)$, denoted $x^*$:  
+
+$$
+    a_1 \times x^* + b_1 = a_2 \times x^* \\
+    x^* = \frac{b_1}{a_2 - a_1} \\
+$$
+
+After replacing $a_1, a_2$ and $b_1$ with their developed value and simplifying the equation, we get
+
+$$
+    x^* = \frac{
+        ||\vec{Dv}|| \cdot (||\vec{i_x}|| \cdot P_y - ||\vec{Vzp}|| \cdot P_x)
+        }{
+            ||\vec{i_x}|| \cdot ||\vec{Vzt}|| - ||\vec{Vzp}|| \cdot ||\vec{Dv}||
+        }
+$$
+
+Finally, we can evaluate the equation of $(OT)$ at $x^*$ in order to calculate the y-coordinate of $I$:
+
+$$
+\begin{align*}
+    y^* &= a_2 \times x^* \\
+        &= \frac{
+        ||\vec{Vzt}|| \cdot (||\vec{i_x}|| \cdot P_y - ||\vec{Vzp}|| \cdot P_x)
+        }{
+            ||\vec{i_x}|| \cdot ||\vec{Vzt}|| - ||\vec{Vzp}|| \cdot ||\vec{Dv}||
+        } 
+
+\end{align*}
 $$
