@@ -46,3 +46,5 @@ After the pilot made one turn, at $t_1$, the pilot's position $P$ is under the t
 The pilot, aware of the need of ovalization, stops circling and goes upwind in a straight line in order to reach back the strongest part of the thermal $I$ at $t_2$. The vector describing this movement is $\vec{i}$.  
 Note that $\vec{i}$ is inclined upward since the pilot is still climing while reaching back the strongest part of the thermal. For simplicity purpose, we suppose the climbing rate to be constant.  
 
+Let's calculate the horizontal distance covered until the pilot reaches the point of intersection $I$ with the optimal trajectory.
+
