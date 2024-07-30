@@ -26,9 +26,10 @@ class SetOfConditions {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    function compute_solution(wind_vx, thermal_vz) {
+    function compute_solution(wind_vx, thermal_vz, time_for_one_turn = 20) {
         instance = new SetOfConditions(wind_vx = wind_vx, thermal_vz = thermal_vz, wing_vz = -1.5, wing_vx = 10)
-        solution = instance.solver()
+        solution = instance.solver() * time_for_one_turn
+        // Give solution for one turn time reference (it was computed for a unitary timestep i.e. one second)
         return solution
     }
 
@@ -42,7 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         var layout = {
-            title: 'Line and Scatter Plot'
+            title: 'Line and Scatter Plot',
+            yaxis: { range: [0, 20] },
         };
 
         Plotly.newPlot('graphCanvas', [plotly_trace], layout);
