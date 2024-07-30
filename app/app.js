@@ -53,13 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // Make initial plot
     let x_axis = nj.arange(1.5, 10, 0.5) // Mapping the x-axis of the thermal vz
     x_axis = x_axis.tolist() // Do not use numpy js anymore
-    let initialWindVx = parseFloat(document.getElementById('windSlider').value);
-    updatePlot(initialWindVx);
+    let selectedWindVx = parseFloat(document.getElementById('windSlider').value);
+    updatePlot(selectedWindVx);
 
     // Update plot with user's interaction
     let sliderObject = document.getElementById("windSlider")
     sliderObject.addEventListener('input', (event) => {
-        let user_set_wind_vx = sliderObject.value
-        updatePlot(user_set_wind_vx)
+        selectedWindVx = sliderObject.value
+        updatePlot(selectedWindVx)
     })
 })
