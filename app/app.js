@@ -26,25 +26,38 @@ class SetOfConditions {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    function compute_solution(thermal_vz) {
-        instance = new SetOfConditions(wind_vx = 3, thermal_vz = thermal_vz, wing_vz = -1.5, wing_vx = 10)
+    function compute_solution(wind_vx, thermal_vz) {
+        instance = new SetOfConditions(wind_vx = wind_vx, thermal_vz = thermal_vz, wing_vz = -1.5, wing_vx = 10)
         solution = instance.solver()
         return solution
     }
 
+    function updatePlot(wind_vx) {
+        let y_values = x_axis.map(thermal_vz => compute_solution(wind_vx, thermal_vz));
+
+        var plotly_trace = {
+            x: x_axis,
+            y: y_values,
+            mode: 'lines'
+        };
+
+        var layout = {
+            title: 'Line and Scatter Plot'
+        };
+
+        Plotly.newPlot('graphCanvas', [plotly_trace], layout);
+    }
+
+    // Make initial plot
     let x_axis = nj.arange(1.5, 10, 0.5) // Mapping the x-axis of the thermal vz
     x_axis = x_axis.tolist() // Do not use numpy js anymore
-    let y_values = x_axis.map(compute_solution)
-    
-    var plotly_trace = {
-        x: x_axis,
-        y: y_values,
-        mode: 'lines'
-    }
-    
-    var layout = {
-        title: 'Line and Scatter Plot'
-    };
-    
-    Plotly.newPlot('graphCanvas', [plotly_trace], layout)
+    let initialWindVx = parseFloat(document.getElementById('windSlider').value);
+    updatePlot(initialWindVx);
+
+    // Update plot with user's interaction
+    let sliderObject = document.getElementById("windSlider")
+    sliderObject.addEventListener('input', (event) => {
+        let user_set_wind_vx = sliderObject.value
+        updatePlot(user_set_wind_vx)
+    })
 })
