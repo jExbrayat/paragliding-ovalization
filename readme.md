@@ -58,10 +58,7 @@ $(IP) : y = a_1 \times x + b_1$
 where  
 
 $$
-\begin{align*}
-    a_1 &= \frac{||\vec{Vzp}||}{||\vec{i_x}||} \\
-        &= \frac{\text{pilot's vertical speed}}{\text{pilot's upwind speed}} \\
-\end{align*}
+    a_1 = \frac{||\vec{Vzp}||}{||\vec{i_x}||}
 $$
 
 and
@@ -69,6 +66,8 @@ and
 $$
     b_1 = P_y - a_1 \times P_x
 $$
+
+Although $||\vec{i_x}||$ is unknown, the computation will be made using a unit time of one second, which constraints $||\vec{i_x}||$ to be equal to the pilot's upwind speed.
 
 $(OT) : y = a_2 \times x$  
 where
