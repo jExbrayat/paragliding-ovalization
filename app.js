@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updatePlot(wind_vx, time_for_one_turn, wing_vz, wing_vx) {
+        // updatePlot function takes as arguments the parameters selected by the user
+        // while the thermal strength variable is inherent to the graph x-axis
         let y_values = x_axis.map(thermal_vz => compute_solution(
             wind_vx = wind_vx,
             thermal_vz = thermal_vz,
