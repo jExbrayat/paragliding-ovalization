@@ -50,25 +50,39 @@ main {
 
 .controls {
     margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
 }
 
 .inputDiv {
+    display: flex;
+    align-items: center;
     margin-bottom: 15px;
+    padding: 5px 0; /* Adds padding to increase vertical space between inputs */
 }
 
 label {
-    display: block;
+    flex: 1;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-right: 10px;
+    text-align: right;
 }
 
 input[type="range"] {
-    width: calc(100% - 60px);
+    flex: 2;
     margin-right: 10px;
 }
 
+#sliderValue {
+    display: inline-block;
+    width: 60px; /* Adjust width as needed */
+    text-align: right;
+    font-weight: bold;
+    color: #4a90e2;
+}
+
 input[type="number"] {
-    width: 100%;
+    flex: 2;
     padding: 8px;
     font-size: 1rem;
     border: 1px solid #ddd;
@@ -79,11 +93,6 @@ input[type="number"]:focus {
     border-color: #4a90e2;
     outline: none;
     box-shadow: 0 0 3px rgba(74, 144, 226, 0.5);
-}
-
-span {
-    font-weight: bold;
-    color: #4a90e2;
 }
 
 footer {
