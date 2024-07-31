@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 title: { text: 'Upwind time - second' }
             },
             xaxis: {
+                range: [1, 10],
                 title: { text: 'Thermal strength - m/s' }
             }
         };
