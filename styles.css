@@ -101,3 +101,45 @@ footer {
     font-size: 0.8rem;
     color: #666;
 }
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+
+    .graph-canvas {
+        height: 300px; /* Reduce height to fit smaller screens */
+    }
+
+    .inputDiv {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    input[type="range"] {
+        margin-right: 0; /* Remove margin-right in column layout */
+    }
+
+    #sliderValue {
+        width: auto; /* Adjust width to fit the container */
+    }
+
+    footer {
+        font-size: 0.7rem; /* Smaller footer text for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .inputDiv {
+        padding: 10px 0; /* Increase padding for better touch targets */
+    }
+
+    input[type="number"], input[type="range"] {
+        font-size: 1.2rem; /* Larger font size for better readability and touch */
+    }
+}
