@@ -79,8 +79,10 @@ $$
 Let's calculate the x-coordinate of $I$, the point of intersection of $(OT)$ and $(IP)$, denoted $x^*$:  
 
 $$
+\begin{align}
     a_1 \times x^* + b_1 = a_2 \times x^* \\
     x^* = \frac{b_1}{a_2 - a_1}
+\end{align}
 $$
 
 After replacing $a_1$, $a_2$, and $b_1$ with their developed values and simplifying the equation, we get
