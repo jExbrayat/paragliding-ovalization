@@ -6,7 +6,8 @@ class SetOfConditions {
         this.wing_vz = wing_vz;
         this.wing_vx = wing_vx;
         // Compute constants
-        this.pilot_upwind_vx = wind_vx - wing_vx;
+        this.pilot_upwind_vx = - (wing_vx - wind_vx); // Take the opposite value since a positive upwind speed
+        // results in a negative x-coordinate for the upwind vector on the graph 
         this.pilot_vz = thermal_vz + wing_vz; // wing_vz is negative
     }
     // vx stands for horizontal speed, vz for vertical speed
