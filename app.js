@@ -50,7 +50,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var layout = {
             title: 'Needed time ovalizing in a straight line - for modelling simplicity - upwind each turn',
-            yaxis: { range: [0, 20] },
+            yaxis: {
+                range: [0, 20],
+                title: { text: 'Upwind time - second' }
+            },
+            xaxis: {
+                title: { text: 'Thermal strength - m/s' }
+            }
         };
 
         Plotly.newPlot('graphCanvas', [plotly_trace], layout);
