@@ -12,29 +12,38 @@
 
 <body>
     <div class="container">
-        <h1>Ovalization while thermalling</h1>
-        <div class="graph-container">
-            <div id="graphCanvas"></div>
-            <div class="inputDiv">
-                <label for="windSlider">Wind speed</label>
-                <span id="sliderValue">3</span> m/s
-                <input type="range" id="windSlider" min="0" max="10" step="0.1" value="3">
+        <header>
+            <h1>Ovalization While Thermalling</h1>
+        </header>
+        <main>
+            <div class="graph-container">
+                <div id="graphCanvas" class="graph-canvas"></div>
+                <div class="controls">
+                    <div class="inputDiv">
+                        <label for="windSlider">Wind Speed</label>
+                        <input type="range" id="windSlider" min="0" max="10" step="0.1" value="3">
+                        <span id="sliderValue">3</span> m/s
+                    </div>
+                    <div class="inputDiv">
+                        <label for="input1">Wing Speed</label>
+                        <input type="number" id="input1" step="1" value="10">
+                    </div>
+                    <div class="inputDiv">
+                        <label for="input2">Wing Sink Rate</label>
+                        <input type="number" id="input2" step="0.1" value="1.5">
+                    </div>
+                    <div class="inputDiv">
+                        <label for="input3">Time for One Thermalling Turn</label>
+                        <input type="number" id="input3" step="1" value="20">
+                    </div>
+                </div>
             </div>
-            <div class="inputDiv">
-                <label for="input1">Wing speed</label>
-                <input type="number" id="input1" step="1" value="10">
-            </div>
-            <div class="inputDiv">
-                <label for="input2">Wing sink rate</label>
-                <input type="number" id="input2" step="0.1" value="1.5">
-            </div>
-            <div class="inputDiv">
-                <label for="input3">Time for one thermalling turn</label>
-                <input type="number" id="input3" step="1" value="20">
-            </div>
-            <script src="app.js"></script>
-        </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 Thermalling Ovalization. All rights reserved.</p>
+        </footer>
     </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
