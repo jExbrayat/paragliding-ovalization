@@ -88,6 +88,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Update plot with user's interaction
     sliderObject.addEventListener('input', (event) => {
         selectedWindVx = sliderObject.value // Update value
+        let currentValue = document.getElementById("sliderValue")
+        currentValue.textContent = selectedWindVx // Update displayed value next to the slider
         updatePlot( // Compute again and plot
             wind_vx = selectedWindVx,
             time_for_one_turn = selectedTimeForOneTurn,
