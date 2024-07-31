@@ -65,10 +65,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let inputObject2 = document.getElementById("input2")
     let inputObject3 = document.getElementById("input3")
 
-    let selectedWindVx = parseFloat(sliderObject.value);
-    let selectedWingVx = parseFloat(inputObject1.value);
-    let selectedWingVz = - parseFloat(inputObject2.value); // Take the opposite since the app asks for a sink rate
-    let selectedTimeForOneTurn = parseFloat(inputObject3.value);
+    let selectedWindVx = sliderObject.value;
+    let selectedWingVx = inputObject1.value;
+    let selectedWingVz = - inputObject2.value;
+    // Take the opposite since the ui asks for a sink rate (positive) 
+    // while the solver asks for a vertical speed (negative)
+    let selectedTimeForOneTurn = inputObject3.value;
 
     updatePlot(
         wind_vx = selectedWindVx,
@@ -103,7 +105,9 @@ document.addEventListener('DOMContentLoaded', function () {
         updatePlot( // Compute again and plot
             wind_vx = selectedWindVx,
             time_for_one_turn = selectedTimeForOneTurn,
-            wing_vz = selectedWingVz,
+            wing_vz = - selectedWingVz,
+            // Take the opposite since the ui asks for a sink rate (positive) 
+            // while the solver asks for a vertical speed (negative)
             wing_vx = selectedWingVx
         );
     })
