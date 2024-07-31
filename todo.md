@@ -1,3 +1,3 @@
 - [ ] adjust inputs style
-- [ ] check why changing wing sink rate led to wrong computation or graph display
+- [x] check why changing wing sink rate led to wrong computation or graph display
 - [x] check correctness of the new default graph: 3, 3.529412
