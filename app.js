@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var plotly_trace = {
             x: x_axis,
             y: y_values,
-            mode: 'lines'
+            mode: 'lines',
+            hovertemplate: 'Thermal strength: %{x:.1f} m/s<br>Upwind time needed: %{y:.1f} s<extra></extra>'
         };
 
         var layout = {
