@@ -1,0 +1,3 @@
+- [ ] adjust inputs style
+- [ ] check why changing inputs led to wrong computation or graph display
+- [ ] check correctness of the new graph: 3, 3.529412
