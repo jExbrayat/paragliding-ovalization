@@ -113,13 +113,13 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     inputObject2.addEventListener('input', (event) => {
-        selectedWingVz = inputObject2.value // Update value
+        selectedWingVz = - inputObject2.value // Update value
+        // Take the opposite since the ui asks for a sink rate (positive) 
+        // while the solver asks for a vertical speed (negative)
         updatePlot( // Compute again and plot
             wind_vx = selectedWindVx,
             time_for_one_turn = selectedTimeForOneTurn,
-            wing_vz = - selectedWingVz,
-            // Take the opposite since the ui asks for a sink rate (positive) 
-            // while the solver asks for a vertical speed (negative)
+            wing_vz = selectedWingVz,
             wing_vx = selectedWingVx
         );
     })
