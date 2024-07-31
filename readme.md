@@ -1,3 +1,20 @@
+# Ovalization in thermalling
+
+Ovalization in thermalling is the action of circling a little bit upwind each turn in order to recenter the thermal when encountering wind drift.  
+
+What distance do we need to recover each turn to return to the center of the thermal? What are the parameters that affect the need for ovalization?
+
+# The problem is formalized as follows:
+
+We consider a pilot and a thermal air particle starting from the same point $O$ at time $t_0$.  
+
+After the pilot has made one turn, at $t_1$, the pilot's position $P$ is below the thermal particle's position $T$ since they are subject to the same wind drift but different vertical speeds.  
+
+The pilot, aware of the need for ovalization, stops circling and goes upwind in a straight line to return to the strongest part of the thermal $I$ at $t_2$. The vector describing this movement is $\vec{i}$.  
+Note that $\vec{i}$ is inclined upward since the pilot is still climbing while returning to the strongest part of the thermal. For simplicity, we assume the climbing rate to be constant.  
+
+Let's calculate the horizontal distance covered until the pilot reaches the point of intersection $I$ with the optimal trajectory.
+
 # Schema
 
 ![schema](./assets/schema.png).
@@ -30,23 +47,6 @@ $||\vec{Vzp}|| = (\text{thermal climb rate} - \text{pilot sink rate}) \times \te
 $I$: point of intersection between the pilot's ovalization trajectory $(IP)$ and the optimal placement in the thermal  
 
 $\vec{i}$: vector of the pilot's ovalization movement  
-
-# Problem
-
-Ovalization in thermalling is the action of circling a little bit upwind each turn in order to recenter the thermal when encountering wind drift.  
-
-What distance do we need to recover each turn to return to the center of the thermal? What are the parameters that affect the need for ovalization?
-
-## The problem is formalized as follows:
-
-We consider a pilot and a thermal air particle starting from the same point $O$ at time $t_0$.  
-
-After the pilot has made one turn, at $t_1$, the pilot's position $P$ is below the thermal particle's position $T$ since they are subject to the same wind drift but different vertical speeds.  
-
-The pilot, aware of the need for ovalization, stops circling and goes upwind in a straight line to return to the strongest part of the thermal $I$ at $t_2$. The vector describing this movement is $\vec{i}$.  
-Note that $\vec{i}$ is inclined upward since the pilot is still climbing while returning to the strongest part of the thermal. For simplicity, we assume the climbing rate to be constant.  
-
-Let's calculate the horizontal distance covered until the pilot reaches the point of intersection $I$ with the optimal trajectory.
 
 # Calculations
 
