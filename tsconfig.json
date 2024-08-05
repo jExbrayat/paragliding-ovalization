@@ -1,12 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es6", // or es5
-    "module": "ESNext",
-    "outDir": "./build",
-    "rootDir": "./src",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "newLine": "LF",
+    "outDir": "./build/",
+    "target": "es5",
+    "sourceMap": true,
+    "declaration": true,
+    "jsx": "preserve",
+    "lib": [
+        "es2017",
+        "dom"
+    ],
     "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["./src"],
 }
