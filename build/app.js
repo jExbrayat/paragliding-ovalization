@@ -1,4 +1,3 @@
-import * as Plotly from 'plotly.js';
 class SetOfConditions {
     constructor(wind_vx, thermal_vz, wing_vz, wing_vx) {
         this.wind_vx = wind_vx;

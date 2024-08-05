@@ -1,5 +1,3 @@
-import * as Plotly from 'plotly.js';
-
 class SetOfConditions {
     private wind_vx: number;
     private thermal_vz: number;
